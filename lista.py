@@ -12,20 +12,34 @@ def horario_despertador(n1,n2):
     '''
     int => int
     '''
-    somaHora = n1+n2
-    while somaHora>=24:
-        somaHora -= 24
-    return somaHora
+    return (n1+n2)%24
 
 #Questão 3
+def torricelli(altura):
+    '''
+    float => float
+    '''
+    velocidade = (2*9.81*altura)**0.5
+    return velocidade 
 #Questão 4
+def sistema_linear_2d(a,b,c,d,y1,y2):
+    '''
+    float,float,float,float,float,float => float,float
+    '''
+    detCoef = a*d - b*c
+    matAx = d*y1 - b*y2
+    matAy = a*y2 - c*y1
+    x1 = matAx / detCoef
+    x2 = matAy / detCoef
+    return f"{x1},{x2}"
+
 #Questão 5
 def horario_chegada(horasAt, minAt, minDur):
     '''
     int,int,int => int,int
     '''
     minTotal = (minAt + minDur)%60
-    hTotal = horasAt + (minAt+minDur)//60 
+    hTotal = horasAt + (minAt+minDur)//60
     return f"{hTotal},{minTotal}"
 
 #Questão 6
