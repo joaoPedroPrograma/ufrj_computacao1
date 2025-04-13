@@ -16,7 +16,7 @@ def coracaoDeMae(friends, carros):
     return verificador
 #5
 #6
-def botaCasacoOuNaoBotaCasaco(temp):
+def botaCasacoTiraCasaco(temp):
     if temp < 10:
         return "Muito frio"
     elif 10 >= temp <=17:
