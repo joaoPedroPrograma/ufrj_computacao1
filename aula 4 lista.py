@@ -9,6 +9,8 @@ def bissextualidade(ano):
     return f"O ano é bissexto? {verificador}"
 
 #3
+def pontoCirculo(x,y,r):
+    return x**2 + y**2 <= r**2
 #4
 def coracaoDeMae(friends, carros):
     assentos = 5 * carros
