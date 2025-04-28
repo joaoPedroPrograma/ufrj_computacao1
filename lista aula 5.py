@@ -26,6 +26,26 @@ def nota(n):
     else:
         return "Nota fora do intervalo"
 
+#3
+def classificar_triangulo(l1,l2,l3):
+    '''
+    float,float,float => str
+    '''
+    equilatero = (l1==l2==l3)
+    isosceles = ((l1==l2) and (l2!=l3)) or ((l2==l3) and (l2!=l1)) or ((l1==l3) and (l3!=l2))
+    escaleno = l1!=l2 and l1!=l3 and l2!=l3
+    erroTriangulo = ((l1+l2)<=l3) or ((l2+l3)<=l1) or((l1+l3)<=l2)
+    if erroTriangulo:
+        return "Os valores fornecidos não formam um triangulo válido"
+    elif equilatero:
+        return "Triângulo equilátero"
+    elif isosceles:
+        return "Triângulo isósceles"
+    elif escaleno:
+        return "Triângulo escaleno"
+    
+
+
 #4
 def bissextualidade(ano):
     '''
@@ -40,7 +60,7 @@ def bissextualidade(ano):
 #5
 def dias(dia_inicial,duracao_estadia):
     '''
-       int,int->str
+    int,int->str
     '''
     if ((dia_inicial + duracao_estadia)%7)==0:
         return "Domingo"
@@ -56,7 +76,6 @@ def dias(dia_inicial,duracao_estadia):
         return "Sexta"
     else:
         return "Sábado"
-
 #6
 def salario_diario(valor, horas, dia):
     '''
@@ -71,8 +90,27 @@ def salario_diario(valor, horas, dia):
         return grana
     else:
         return 'Insira termos válidos, exemplo: (10,8,"segunda-feira")'
-    
 
+#7
+import math as m
+def raizes_eq_quadratica(a,b,c):
+    '''
+    Caso delta > 0
+    float, float, float => float, float
+    delta == 0
+    float, float, float => float
+    '''
+    delta = b**2-4*a*c
+    if delta > 0:
+        x1 = (-b + m.sqrt(delta))/(2*a)
+        x2 = (-b - m.sqrt(delta))/(2*a)
+        return x1,x2
+    elif delta == 0:
+        x1 = -b/2*a
+        return x1
+    else:
+        return "A equacao nao possui raizes reais"
+    
 #8
 def valor_final_produto(preço,categoria):
     '''
@@ -80,21 +118,27 @@ def valor_final_produto(preço,categoria):
     '''
     if categoria == 'eletrônico':
         preço = preço *0.9
-    elif categoria == 'estuário':
-        preço * 0.95
+    elif categoria == 'vestuário':
+        preço = preço * 0.95
     elif categoria == 'alimento':
-        preço*1
+        preço = preço
+    else:
+        return 'Insira uma entrada válida, exemplo: (500, "eletrônico")'
     if preço > 1000:
         preço = preço * 1.15  
     elif 500 <=preço<=1000:
         preço = preço * 1.10  
     elif preço < 500:
         preço = preço * 1.05  
-    return preço
-
+    return round(preço, 2)
 
 #9
 def deduçãoIR(n):
+    '''
+    float => str
+    ou
+    float => float
+    '''
     if n <= 1903.98:
         return "Isento"
     elif 1903.98 <= n <= 2826.65:
@@ -108,6 +152,9 @@ def deduçãoIR(n):
 
 #10
 def quantidade_raizes(a,b,c):
+    '''
+    float, float, float => str
+    '''
     delta = b**2-4*a*c
     if delta < 0:
         return "Nenhuma raiz real"
@@ -115,3 +162,5 @@ def quantidade_raizes(a,b,c):
         return "Uma raiz real"
     else:
         return "Duas raízes reais"
+
+
