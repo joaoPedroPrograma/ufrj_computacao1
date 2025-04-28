@@ -37,6 +37,26 @@ def bissextualidade(ano):
     else:
         return f"O Ano {ano} não é bissexto"
 
+#5
+def dias(dia_inicial,duracao_estadia):
+    '''
+       int,int->str
+    '''
+    if ((dia_inicial + duracao_estadia)%7)==0:
+        return "Domingo"
+    elif ((dia_inicial + duracao_estadia)%7)==1:
+        return "Segunda"
+    elif ((dia_inicial + duracao_estadia)%7)==2:
+        return "Terça"
+    elif ((dia_inicial + duracao_estadia)%7)==3:
+        return "Quarta"
+    elif ((dia_inicial + duracao_estadia)%7)==4:
+        return "Quinta"
+    elif ((dia_inicial +duracao_estadia)%7)==5:
+        return "Sexta"
+    else:
+        return "Sábado"
+
 #6
 def salario_diario(valor, horas, dia):
     '''
