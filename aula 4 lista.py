@@ -3,7 +3,7 @@ def elegibilidade(idade):
     '''
     int => bool
     '''
-    verificador = idade >=18
+    verificador = idade >=16
     return f"A pessoa é elegível para votar? {verificador}"
 
 #2
